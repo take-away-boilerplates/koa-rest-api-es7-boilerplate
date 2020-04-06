@@ -1,0 +1,46 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -L -w src --exec babel-node src",
+    "build": "babel src -s -D -d dist",
+    "start": "node dist",
+    "lint": "eslint src",
+    "coverage": "nyc yarn run test",
+    "test": "NODE_ENV=test mocha test/**/*.test.js --require @babel/register",
+    "test:watch": "NODE_ENV=test mocha test/**/*.test.js --watch --require @babel/register"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "koa": "^2.11.0",
+    "koa-router": "^8.0.8",
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-mocha": "^6.3.0",
+    "faker": "^4.1.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "sinon": "7.5.0",
+    "sinon-mongoose": "^2.3.0"
+  }
+}
